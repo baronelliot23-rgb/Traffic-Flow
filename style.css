@@ -1,0 +1,516 @@
+:root {
+    --primary-black: #121212;
+    --secondary-black: #1e1e1e;
+    --accent-red: #ff3333;
+    --light-red: #ff6666;
+    --text-light: #f5f5f5;
+    --text-gray: #cccccc;
+    --horizon-blue: #3498db;
+    --volcano-orange: #e74c3c;
+    --stella-purple: #9b59b6;
+    --kigali-green: #2ecc71;
+    --matunda-yellow: #f1c40f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-black);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--secondary-black);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    color: var(--accent-red);
+    font-size: 1.8rem;
+}
+
+.logo-icon {
+    color: var(--accent-red);
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-red);
+    color: var(--primary-black);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-red);
+    color: var(--text-light);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-red);
+    color: var(--accent-red);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
+                url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Partner Companies Section */
+.partners-section {
+    margin: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--accent-red);
+    font-size: 2.5rem;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.partner-card {
+    background: linear-gradient(145deg, var(--secondary-black), #2a2a2a);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border-top: 5px solid;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: currentColor;
+}
+
+.partner-card.horizon {
+    border-color: var(--horizon-blue);
+    color: var(--horizon-blue);
+}
+
+.partner-card.volcano {
+    border-color: var(--volcano-orange);
+    color: var(--volcano-orange);
+}
+
+.partner-card.stella {
+    border-color: var(--stella-purple);
+    color: var(--stella-purple);
+}
+
+.partner-card.kigali {
+    border-color: var(--kigali-green);
+    color: var(--kigali-green);
+}
+
+.partner-card.matunda {
+    border-color: var(--matunda-yellow);
+    color: var(--matunda-yellow);
+}
+
+.partner-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.partner-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.partner-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.partner-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: currentColor;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+/* Ticket Booking Section */
+.booking-section {
+    background-color: var(--secondary-black);
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.company-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.company-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-black);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.company-btn.active {
+    border-color: currentColor;
+    color: currentColor;
+}
+
+.company-btn.horizon.active { color: var(--horizon-blue); border-color: var(--horizon-blue); }
+.company-btn.volcano.active { color: var(--volcano-orange); border-color: var(--volcano-orange); }
+.company-btn.stella.active { color: var(--stella-purple); border-color: var(--stella-purple); }
+.company-btn.kigali.active { color: var(--kigali-green); border-color: var(--kigali-green); }
+.company-btn.matunda.active { color: var(--matunda-yellow); border-color: var(--matunda-yellow); }
+
+/* Tickets Grid */
+.tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ticket-card {
+    background: linear-gradient(145deg, var(--primary-black), #2a2a2a);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-card.horizon { border-color: var(--horizon-blue); }
+.ticket-card.volcano { border-color: var(--volcano-orange); }
+.ticket-card.stella { border-color: var(--stella-purple); }
+.ticket-card.kigali { border-color: var(--kigali-green); }
+.ticket-card.matunda { border-color: var(--matunda-yellow); }
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.ticket-company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.ticket-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-red);
+}
+
+.ticket-details {
+    margin: 1rem 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #333;
+}
+
+.detail-label {
+    color: var(--text-gray);
+}
+
+.detail-value {
+    font-weight: 600;
+}
+
+.vehicle-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.plate-number {
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.conditions {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.conditions ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.conditions li {
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.book-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: var(--accent-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.book-btn:hover {
+    background-color: #ff5555;
+    transform: scale(1.02);
+}
+
+/* Dashboard Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    min-height: 600px;
+}
+
+.sidebar {
+    background-color: var(--secondary-black);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: var(--accent-red);
+    color: var(--primary-black);
+}
+
+.dashboard-content {
+    background-color: var(--secondary-black);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-black);
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid var(--accent-red);
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.partner-logo {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo-horizon { background-color: rgba(52, 152, 219, 0.2); color: var(--horizon-blue); border: 1px solid var(--horizon-blue); }
+.logo-volcano { background-color: rgba(231, 76, 60, 0.2); color: var(--volcano-orange); border: 1px solid var(--volcano-orange); }
+.logo-stella { background-color: rgba(155, 89, 182, 0.2); color: var(--stella-purple); border: 1px solid var(--stella-purple); }
+.logo-kigali { background-color: rgba(46, 204, 113, 0.2); color: var(--kigali-green); border: 1px solid var(--kigali-green); }
+.logo-matunda { background-color: rgba(241, 196, 15, 0.2); color: var(--matunda-yellow); border: 1px solid var(--matunda-yellow); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tickets-grid {
+        grid-template-columns: 1fr;
+    }
+}
