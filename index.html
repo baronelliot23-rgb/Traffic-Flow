@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrafficFlow - Partner Transport Network</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🚗</div>
+            <h1>TrafficFlow</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('partners')">Our Partners</a></li>
+                <li><a href="#" onclick="showSection('booking')">Book Tickets</a></li>
+                <li><a href="#" onclick="showSection('traffic')">Traffic Info</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn btn-secondary" onclick="showSection('login')">Login</button>
+            <button class="btn btn-primary" onclick="showSection('register')">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Page -->
+        <section id="home" class="page-section">
+            <div class="hero">
+                <h2>Partner Transport Network</h2>
+                <p>Book tickets directly from our trusted partners: Horizon, Volcano, Stella, KigaliExpress, and Matunda. Real-time schedules, vehicle tracking, and smart routing.</p>
+                <button class="btn btn-primary" onclick="showSection('booking')">Book Now</button>
+            </div>
+
+            <div class="partners-section">
+                <h2 class="section-title">Our Trusted Partners</h2>
+                <div class="partners-grid">
+
+                    <div class="partner-card horizon" onclick="selectCompany('horizon')">
+                        <div class="partner-icon">🌅</div>
+                        <h3>Horizon Travel</h3>
+                        <p>Premium long-distance luxury coaches with Wi-Fi, entertainment, and sleeper cabins.</p>
+                        <div class="partner-stats">
+                            <div class="stat">
+                                <div class="stat-value">85%</div>
+                                <div class="stat-label">On Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.8★</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">Support</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card volcano" onclick="selectCompany('volcano')">
+                        <div class="partner-icon">🌋</div>
+                        <h3>Volcano Express</h3>
+                        <p>Fast, reliable express services connecting major cities with minimal stops.</p>
+                        <div class="partner-stats">
+                            <div class="stat">
+                                <div class="stat-value">92%</div>
+                                <div class="stat-label">On Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.6★</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">45min</div>
+                                <div class="stat-label">Avg. Delay</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card stella" onclick="selectCompany('stella')">
+                        <div class="partner-icon">⭐</div>
+                        <h3>Stella Coaches</h3>
+                        <p>Comfortable mid-range coaches with AC, charging ports, and onboard refreshments.</p>
+                        <div class="partner-stats">
+                            <div class="stat">
+                                <div class="stat-value">88%</div>
+                                <div class="stat-label">On Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.7★</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">Routes</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card kigali" onclick="selectCompany('kigali')">
+                        <div class="partner-icon">🇷🇼</div>
+                        <h3>KigaliExpress</h3>
+                        <p>Budget-friendly urban and intercity transport with frequent departures.</p>
+                        <div class="partner-stats">
+                            <div class="stat">
+                                <div class="stat-value">95%</div>
+                                <div class="stat-label">On Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.4★</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">15min</div>
+                                <div class="stat-label">Frequency</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card matunda" onclick="selectCompany('matunda')">
+                        <div class="partner-icon">🍎</div>
+                        <h3>Matunda Trans</h3>
+                        <p>Rural and suburban services connecting smaller towns and villages.</p>
+                        <div class="partner-stats">
+                            <div class="stat">
+                                <div class="stat-value">82%</div>
+                                <div class="stat-label">On Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.5★</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">200+</div>
+                                <div class="stat-label">Towns</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="page-section" style="display: none;">
+            <div class="booking-section">
+                <div class="booking-header">
+                    <h2>Book Your Journey</h2>
+                    <span id="selected-company-display">All Companies</span>
+                </div>
+
+                <div class="company-selector">
+                    <button class="company-btn" onclick="showAllCompanies()">All Companies</button>
+                    <button class="company-btn horizon" onclick="filterByCompany('horizon')">Horizon</button>
+                    <button class="company-btn volcano" onclick="filterByCompany('volcano')">Volcano</button>
+                    <button class="company-btn stella" onclick="filterByCompany('stella')">Stella</button>
+                    <button class="company-btn kigali" onclick="filterByCompany('kigali')">KigaliExpress</button>
+                    <button class="company-btn matunda" onclick="filterByCompany('matunda')">Matunda</button>
+                </div>
+
+                <div class="tickets-grid" id="tickets-container"></div>
+            </div>
+        </section>
+
+        <section id="login" class="page-section" style="display: none;">
+            <div>
+                <h2>Login</h2>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>
+                    Don't have an account?
+                    <a href="#" onclick="showSection('register')">Sign up</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="register" class="page-section" style="display: none;">
+            <div>
+                <h2>Create Account</h2>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Phone Number">
+                <input type="password" placeholder="Password">
+                <button onclick="register()">Create Account</button>
+                <p>
+                    Already have an account?
+                    <a href="#" onclick="showSection('login')">Login</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h1>TrafficFlow</h1>
+            <p>Official Partner Platform</p>
+            <div class="partner-logos">
+                <div class="partner-logo logo-horizon">Horizon Travel</div>
+                <div class="partner-logo logo-volcano">Volcano Express</div>
+                <div class="partner-logo logo-stella">Stella Coaches</div>
+                <div class="partner-logo logo-kigali">KigaliExpress</div>
+                <div class="partner-logo logo-matunda">Matunda Trans</div>
+            </div>
+            <p>© 2024 TrafficFlow. All partner logos and trademarks are property of their respective owners.</p>
+        </div>
+    </footer>
+</body>
+</html>
