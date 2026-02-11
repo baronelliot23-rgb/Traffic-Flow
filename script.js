@@ -1,3 +1,15 @@
+// ====== Show/Hide Sections ======
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(sec => {
+        if (sec.id === sectionId) {
+            sec.style.display = 'block';
+        } else {
+            sec.style.display = 'none';
+        }
+    });
+}
+
 // ====== Company Selection ======
 const companyButtons = document.querySelectorAll('.company-btn');
 const ticketCards = document.querySelectorAll('.ticket-card');
@@ -57,4 +69,9 @@ anchors.forEach(anchor => {
             target.scrollIntoView({ behavior: 'smooth' });
         }
     });
+});
+
+// ====== Show Home Section by Default ======
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('home');
 });
